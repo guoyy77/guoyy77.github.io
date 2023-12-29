@@ -6,7 +6,7 @@ header-img: img/bg.jpg
 description: And we could run away.Before the light of day.
 keyword: "gyy, C++, 中山大学"
 url: "https://guoyy77.github.io/gyy.github.io/"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/gyy.github.io"      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/guoyy77/gyy.github.io/" # you code repository
 
 # Sidebar settings
