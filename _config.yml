@@ -14,7 +14,9 @@ sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "每天进步一点点"
 sidebar-avatar: /img/profile.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
-
+# Share
+social-share: true
+social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
 
 # SNS settings
 RSS: false
@@ -25,6 +27,9 @@ github_username:    guoyy77
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 email_username:  3146236902@qq.com
+qq_username:   gyyyyyy
+# wechat_username: gyy59111666
+bilibili_username: 千杯不醉的小李
 
 
 

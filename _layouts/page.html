@@ -15,6 +15,7 @@ layout: default
             </div>
         </div>
     </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 </header>
 
 <!-- Main Content -->
@@ -122,6 +123,17 @@ layout: default
                                 </a>
                             </li>
                             {% endif %}
+                            <!-- 添加bilibili -->
+                            {% if site.bilibili_username %}
+                            <li>
+                                <a href="https://space.bilibili.com/445491262">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-bilibili fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}   
                             <!-- add jianshu add target = "_blank" to <a> by BY -->
                             {% if site.jianshu_username %}
                             <li>
@@ -145,7 +157,7 @@ layout: default
                             {% endif %}
                             {% if site.zhihu_username %}
                             <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
+                                <a target="_blank" href="https://www.zhihu.com/people/gyy-92-18">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa  fa-stack-1x fa-inverse">知</i>
@@ -178,7 +190,7 @@ layout: default
                                 <a target="_blank" href="https://github.com/{{ site.github_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </li>
@@ -192,12 +204,12 @@ layout: default
                                     </span>
                                 </a>
                             </li>
-                            {% endif %}
-                            
+                            {% endif %} 
                         </ul>
                         {% if site.email %}
                             <p>✉️ {{site.email}}</p>
                         {% endif %}
+                        
                     </div>
                 </section>
                 <!-- Friends Blog -->

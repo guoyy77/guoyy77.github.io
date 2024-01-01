@@ -1,45 +1,63 @@
 ---
 layout: page
-title: "About"
+title: "Sum"
 description: "<strong>Welcome to GYY's Blog~</strong>"
-header-img: "img/About.jpg"
+header-img: "img/Sum.jpg"
 ---
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 标签云 -->
+            <div id='tag_cloud' class="tags">
+                {% assign all_tags = site.tags %}
+                {% for tag in all_tags %}
+                    <a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+                {% endfor %}
+            </div>
 
-<!-- Language Selector -->
-<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select> -->
+            <!-- 按照年份和月份排序的标签列表 -->
+            {% for post in site.posts | sort: 'date' | reverse %}
+                <!-- 提取文章的年份和月份 -->
+                {% assign post_year = post.date | date: "%Y" %}
+                {% assign post_month = post.date | date: "%m" %}
+                
+                <!-- 显示年份标签，如果不同于前一个年份 -->
+                {% if post_year != previous_year %}
+                    <h2 class="year-tag">{{ post_year }}</h2>
+                    {% assign previous_year = post_year %}
+                {% endif %}
 
-<!-- Chinese Version -->
-<div class="zh post-container">
-
-    <!--copied from markdown -->
-    <blockquote><p> 物来顺应，未来不迎，当下不杂，既往不恋<br>
-    </p></blockquote>
-
-    <p>我是<strong>GYY</strong>，一名坚强的在SYSU大山中学生存的计算机超算方向本科生。</p>
-    <p>有问题欢迎一起交流哦~</p>
-    <br>
-    <br>
-    <br>
-  
-    <P><strong>参考模板&大佬链接：</strong></p> 
-    <P> <a href="https://437436999.github.io/">Mac.C学长</a>: 参考大佬博客做的主页</p>
-    <P> <a href="https://github.com/DonaLdZY/">dlz</a>: 某acm大佬</p>
-    <P> <a href="https://wu-kan.cn/archive/">吴坎学长</a>: 非常非常非常非常厉害的学长。</p>
-    <p> <a href="https://github.com/yzr-mint">叶钊榕</a>: 同班非常非常厉害的大佬</p>
-    
-    <br>
-    <br>
-    <br>
-    <h5>Talks</h5>
-
-    <ul>
-        <li><a href="https://github.com">GitHub</a></li>
-        <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-    </ul>
+                <!-- 显示月份标签，如果不同于前一个月份 -->
+                {% if post_month != previous_month %}
+                    <h3 class="month-tag">{{ post.date | date: "%B" }}</h3>
+                    {% assign previous_month = post_month %}
+                {% endif %}
+                <!-- 显示文章 -->
+                <div class="post-preview">
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                        <h2 class="post-title">
+                            {{ post.title }}
+                        </h2>
+                        {% if post.subtitle %}
+                        <h3 class="post-subtitle">
+                            {{ post.subtitle }}
+                        </h3>
+                        {% endif %}
+                        <div class="post-content-preview">
+                            {{ post.content | strip_html | truncate:200 }}
+                        </div>
+                    </a>
+                    <p class="post-meta">
+                        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+                    </p>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
 </div>
+
 
 <!-- English Version -->
 <!-- <div class="en post-container">
@@ -118,7 +136,7 @@ header-img: "img/About.jpg"
     owner: '{{site.gitalk.owner}}',
     admin: ['{{site.gitalk.admin}}'],
     distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-    id: 'about',
+    id: 'sum',
     });
     gitalk.render('gitalk-container');
 </script>
