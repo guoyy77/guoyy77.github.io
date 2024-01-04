@@ -15,48 +15,47 @@ header-img: "img/Sum.jpg"
                     <a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
                 {% endfor %}
             </div>
-
-            <!-- 按照年份和月份排序的标签列表 -->
-            {% for post in site.posts | sort: 'date' | reverse %}
-                <!-- 提取文章的年份和月份 -->
-                {% assign post_year = post.date | date: "%Y" %}
-                {% assign post_month = post.date | date: "%m" %}
-                
-                <!-- 显示年份标签，如果不同于前一个年份 -->
-                {% if post_year != previous_year %}
-                    <h2 class="year-tag">{{ post_year }}</h2>
-                    {% assign previous_year = post_year %}
-                {% endif %}
-
-                <!-- 显示月份标签，如果不同于前一个月份 -->
-                {% if post_month != previous_month %}
-                    <h3 class="month-tag">{{ post.date | date: "%B" }}</h3>
-                    {% assign previous_month = post_month %}
-                {% endif %}
-                <!-- 显示文章 -->
-                <div class="post-preview">
-                    <a href="{{ post.url | prepend: site.baseurl }}">
-                        <h2 class="post-title">
-                            {{ post.title }}
-                        </h2>
-                        {% if post.subtitle %}
-                        <h3 class="post-subtitle">
-                            {{ post.subtitle }}
-                        </h3>
-                        {% endif %}
-                        <div class="post-content-preview">
-                            {{ post.content | strip_html | truncate:200 }}
-                        </div>
-                    </a>
-                    <p class="post-meta">
-                        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-                    </p>
-                </div>
-                <hr>
-            {% endfor %}
         </div>
     </div>
 </div>
+<!-- 按照年份和月份排序的标签列表 -->
+{% for post in site.posts | sort: 'date' | reverse %}
+    <!-- 提取文章的年份和月份 -->
+    {% assign post_year = post.date | date: "%Y" %}
+    {% assign post_month = post.date | date: "%m" %}
+    
+    <!-- 显示年份标签，如果不同于前一个年份 -->
+    {% if post_year != previous_year %}
+        <h2 class="year-tag">{{ post_year }}</h2>
+        {% assign previous_year = post_year %}
+    {% endif %}
+
+    <!-- 显示月份标签，如果不同于前一个月份 -->
+    {% if post_month != previous_month %}
+        <h3 class="month-tag">{{ post.date | date: "%B" }}</h3>
+        {% assign previous_month = post_month %}
+    {% endif %}
+    <!-- 显示文章 -->
+    <div class="post-preview">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            <h2 class="post-title">
+                {{ post.title }}
+            </h2>
+            {% if post.subtitle %}
+            <h3 class="post-subtitle">
+                {{ post.subtitle }}
+            </h3>
+            {% endif %}
+            <div class="post-content-preview">
+                {{ post.content | strip_html | truncate:200 }}
+            </div>
+        </a>
+        <p class="post-meta">
+            Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        </p>
+    </div>
+    <hr>
+{% endfor %}
 
 
 <!-- English Version -->
