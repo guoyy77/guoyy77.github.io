@@ -2,12 +2,25 @@
 layout: page
 title: "Amusement"
 description: "<strong>Welcome to GYY's Blog~</strong>"
-header-img: "img/Amu.jpg"
+header-img: "img/amu.jpg"
 ---
 {% for lesson in site.jekyll%}
-    <h2>
-        <a href="{{lesson.url}}">
+<div class="post-preview">
+    <a href="{{ lesson.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
             {{ lesson.title }}
-        </a>
-    </h2>
+        </h2>
+        {% if lesson.subtitle %}
+        <h3 class="post-subtitle">
+            {{ lesson.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ lesson.content | strip_html | truncate:200 }}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if lesson.author %}{{ lesson.author }}{% else %}{{ site.title }}{% endif %} on {{ lesson.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
 {% endfor %}
