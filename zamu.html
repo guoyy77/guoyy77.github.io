@@ -1,0 +1,13 @@
+---
+layout: page
+title: "Amusement"
+description: "<strong>Welcome to GYY's Blog~</strong>"
+header-img: "img/Amu.jpg"
+---
+{% for lesson in site.jekyll%}
+    <h2>
+        <a href="{{lesson.url}}">
+            {{ lesson.title }}
+        </a>
+    </h2>
+{% endfor %}
