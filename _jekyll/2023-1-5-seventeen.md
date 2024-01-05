@@ -13,7 +13,7 @@ lesson: ch03
 
 我看到有趣的就放进来！
 
-先看点经典的，哈哈哈！
+## 先看点经典的，哈哈哈！
 <iframe 
 src="https://www.bilibili.com/video/BV1Sb411W788/?share_source=copy_web&vd_source=5829424a7f9e58bac02136e41b46620c" 
 scrolling="no" 
@@ -22,11 +22,12 @@ frameborder="yes"
 framespacing="5" 
 allowfullscreen="true" 
 height=600 
-width=700> 
+width=700>
 </iframe>
+[点这里看全部](https://www.bilibili.com/video/BV1Sb411W788/?share_source=copy_web&vd_source=5829424a7f9e58bac02136e41b46620c)
 
-入坑的mv
-<iframe 
+## 入坑的mv
+<iframe
 src="https://www.bilibili.com/video/BV1pL411G797/?share_source=copy_web&vd_source=5829424a7f9e58bac02136e41b46620c" 
 scrolling="no" 
 border="0" 
@@ -34,11 +35,12 @@ frameborder="yes"
 framespacing="5" 
 allowfullscreen="true" 
 height=600 
-width=700> 
+width=700>
 </iframe>
+[点这里看全部](https://www.bilibili.com/video/BV1pL411G797/?share_source=copy_web&vd_source=5829424a7f9e58bac02136e41b46620c)
 
-大壳老师你要不要这么好笑
-<iframe 
+## 大壳老师你要不要这么好笑
+<iframe
 src="https://www.bilibili.com/video/BV1GK4y1678L/?share_source=copy_web&vd_source=5829424a7f9e58bac02136e41b46620c" 
 scrolling="no" 
 border="0" 
@@ -48,3 +50,4 @@ allowfullscreen="true"
 height=600 
 width=700> 
 </iframe>
+[点这里看全部](https://www.bilibili.com/video/BV1GK4y1678L/?share_source=copy_web&vd_source=5829424a7f9e58bac02136e41b46620c)
